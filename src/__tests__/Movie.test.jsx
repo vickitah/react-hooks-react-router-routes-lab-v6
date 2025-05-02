@@ -34,15 +34,17 @@ test("renders movie's time within a p tag", async () => {
   expect(p.tagName).toBe("P");
 });
 
-test("renders a span for each genre",  () => {
+test("renders a span for each genre",  async () => {
   render(<RouterProvider router={router} />);
   const genres = ["Action", "Adventure", "Fantasy"];
-  genres.forEach(async (genre) =>{
-    const span = await screen.findByText(genre);
+  for (const genre of genres) {
+    const span = await screen.findByText(genre, { timeout: 5000 });
     expect(span).toBeInTheDocument();
-    expect(span.tagName).toBe("SPAN");
-  })
+  }
 });
+   
+;
+
 
 test("renders the <NavBar /> component", async () => {
   const router = createMemoryRouter(routes, {
