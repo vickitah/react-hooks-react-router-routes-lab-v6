@@ -1,3 +1,4 @@
+import React from "react";
 import { actors } from "../data";
 
 export default function Actors() {

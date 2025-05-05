@@ -1,3 +1,4 @@
+import React from "react";
 // src/components/MovieCard.js
 import { Link } from "react-router-dom";
 
